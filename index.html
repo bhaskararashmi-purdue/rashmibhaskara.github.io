@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rashmi Bhaskara — Medical Physics & AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <span class="nav-name">Rashmi Bhaskara</span>
+    <div class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1>Rashmi Bhaskara</h1>
+        <p class="hero-role">Ph.D. Candidate · Medical Physics · Purdue University</p>
+        <p class="hero-bio">
+          A tumor is not an island. It exists within a dynamic microenvironment of immune cells, hypoxic regions,
+          and stromal tissue that continuously evolves as the disease progresses, and it is precisely how this
+          microenvironment changes during treatment that determines whether a patient responds or resists.
+          Capturing this biology today requires either a biopsy or a battery of specialized PET tracers, each
+          targeting a different component: FAPI for fibroblast activity, FMISO for hypoxia, and so on. For a
+          patient already navigating a difficult treatment journey, this means more injections, more procedures,
+          and more distress. My research takes a different approach. Studies show that standard FDG PET carries
+          meaningful signal about immune activity, hypoxia, and cancer-associated fibroblast behavior. I build
+          deep learning models that extract these biological signatures from FDG PET and CT scans alone.
+          Tracking how they evolve across treatment gives clinicians a window into the tumor microenvironment
+          without any additional burden on the patient.
+        </p>
+        <div class="hero-links">
+          <a href="mailto:bhaskarr@purdue.edu" class="pill">Email</a>
+          <a href="https://github.com/bhaskararashmi-purdue" target="_blank" class="pill">GitHub</a>
+          <a href="https://scholar.google.com/" target="_blank" class="pill">Google Scholar</a>
+          <a href="Resume.pdf" target="_blank" class="pill">CV / Resume</a>
+        </div>
+      </div>
+      <div class="avatar">RB</div>
+    </section>
+
+    <!-- DISSERTATION -->
+    <section class="section" id="research">
+      <h2 class="section-title">Ph.D. Dissertation <span class="badge badge-warn">In progress</span></h2>
+      <div class="thesis-card">
+        <h3>Non-Invasive Tumor Microenvironment Characterization and Treatment Response Modeling in NSCLC</h3>
+        <p>Advisor: Dr. Oluwaseyi Oderinde · AdMIRe Lab · Expected 2028</p>
+        <div class="aims">
+          <div class="aim">
+            <div class="aim-num">Aim 1</div>
+            <div>
+              <strong>CT to FDG-PET synthesis</strong>
+              <p>Training a 3D conditional optimal transport flow matching model on paired CT/PET from NSCLC-Radiogenomics (n=211) to generate metabolic maps for CT-only patients.</p>
+            </div>
+          </div>
+          <div class="aim">
+            <div class="aim-num">Aim 2</div>
+            <div>
+              <strong>Biological TME state inference</strong>
+              <p>Cross-modal VAE with ViT encoder supervised by RNA-seq-derived immune, hypoxic, and stromal scores to learn a biologically interpretable latent TME state per patient from PET/CT alone.</p>
+            </div>
+          </div>
+          <div class="aim">
+            <div class="aim-num">Aim 3</div>
+            <div>
+              <strong>TME trajectory and survival prediction</strong>
+              <p>Computing per-patient TME trajectory vectors before and after chemoRT and demonstrating improved survival concordance over RECIST and delta-SUVmax baselines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ANIMATION 1: TME COMPONENTS -->
+      <h2 class="section-title" style="margin-top:3rem;">What is the tumor microenvironment?</h2>
+      <p class="section-sub">The TME is an ecosystem of cell types surrounding the tumor. Each plays a role in how the tumor grows and how it responds to treatment.</p>
+      <div class="pipeline-wrap">
+        <canvas id="tmeComponentsCanvas"></canvas>
+      </div>
+
+      <!-- ANIMATION 2: OLD WAY VS NEW WAY -->
+      <h2 class="section-title" style="margin-top:3rem;">The problem with current TME measurement</h2>
+      <p class="section-sub">Characterizing each TME component today requires separate specialized tracers or an invasive biopsy. My research extracts all of this from scans the patient already receives.</p>
+      <div class="pipeline-wrap">
+        <canvas id="approachCanvas"></canvas>
+      </div>
+
+      <!-- ANIMATION 3: TREATMENT TRAJECTORY -->
+      <h2 class="section-title" style="margin-top:3rem;">Tracking how the TME evolves during treatment</h2>
+      <p class="section-sub">By applying the model at baseline and after chemoradiotherapy, we compute a biological trajectory per patient and ask whether immune activation or stromal remodeling predicts survival.</p>
+      <div class="pipeline-wrap">
+        <canvas id="trajectoryCanvas"></canvas>
+      </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-grid">
+
+        <div class="project-card">
+          <span class="badge badge-warn">Thesis · In progress</span>
+          <h3>TME characterization in NSCLC</h3>
+          <p>End-to-end non-invasive framework: CT to PET synthesis, biologically supervised VAE for TME inference, and TME-conditioned deep survival modeling.</p>
+          <div class="card-tags"><span>PyTorch</span><span>Flow Matching</span><span>VAE</span><span>Survival Analysis</span></div>
+        </div>
+
+        <div class="project-card">
+          <span class="badge badge-blue">Published · IOP 2025</span>
+          <h3>Synthetic CT from CBCT</h3>
+          <p>ViT + Adaptive Fourier Neural Operator model for SBRT planning that improves dose adaptation and prostate gland localization while reducing bladder and rectum toxicity.</p>
+          <div class="card-tags"><span>ViT</span><span>AFNO</span><span>Radiation Oncology</span></div>
+        </div>
+
+        <div class="project-card">
+          <span class="badge badge-med">Medical imaging</span>
+          <h3>Synthetic PSMA PET generation</h3>
+          <p>Deep learning framework for prostate cancer patients that improves PSMA PET scan accessibility and affordability while reducing radiation toxicity to the excretory system.</p>
+          <div class="card-tags"><span>PyTorch</span><span>Image-to-image translation</span></div>
+        </div>
+
+        <div class="project-card">
+          <span class="badge badge-green">Published · ICRA 2024</span>
+          <h3>FlowMNO — trajectory prediction</h3>
+          <p>Optical Flow-Integrated Markov Neural Operator for pedestrian trajectory prediction, outperforming LSTM, GAN, and CNN baselines by approximately 86%.</p>
+          <div class="card-tags"><span>Markov Neural Operator</span><span>Optical Flow</span><span>Robotics</span></div>
+        </div>
+
+        <div class="project-card">
+          <span class="badge badge-green">Published · IROS 2023</span>
+          <h3>SG-LSTM — social robot navigation</h3>
+          <p>Social Group LSTM for navigating dense crowds while respecting group behavior norms. Released a labeled pedestrian group detection dataset.</p>
+          <div class="card-tags"><span>LSTM</span><span>Social Navigation</span><span>Dataset</span></div>
+        </div>
+
+        <div class="project-card">
+          <span class="badge badge-med">Clinical</span>
+          <h3>MRI quality assurance</h3>
+          <p>ACR phantom testing on clinical MRI scanners at Purdue MRI Facility. QA data analysis using MicroDicom with full clinical documentation.</p>
+          <div class="card-tags"><span>ACR QA</span><span>MicroDicom</span><span>Clinical</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="section" id="publications">
+      <h2 class="section-title">Publications</h2>
+      <div class="pub-list">
+
+        <div class="pub">
+          <div class="pub-year">2025</div>
+          <div class="pub-body">
+            <div class="pub-title">Enhancing synthetic pelvic CT generation from CBCT using vision transformer with adaptive fourier neural operators</div>
+            <div class="pub-venue">Biomedical Physics &amp; Engineering Express, IOP Publishing — Vol. 11, No. 5, 055013</div>
+            <div class="pub-authors">Rashmi Bhaskara &amp; Oluwaseyi Oderinde</div>
+            <a href="https://doi.org/10.1088/2057-1976/adf4ee" target="_blank" class="pub-doi">DOI: 10.1088/2057-1976/adf4ee ↗</a>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-year">2024</div>
+          <div class="pub-body">
+            <div class="pub-title">Trajectory prediction for robot navigation using flow-guided markov neural operator</div>
+            <div class="pub-venue">2024 IEEE International Conference on Robotics and Automation (ICRA), Yokohama, Japan</div>
+            <div class="pub-authors">R. Bhaskara, H. Viswanath &amp; A. Bera</div>
+            <a href="https://doi.org/10.1109/ICRA57147.2024.10611154" target="_blank" class="pub-doi">DOI: 10.1109/ICRA57147.2024.10611154 ↗</a>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-year">2023</div>
+          <div class="pub-body">
+            <div class="pub-title">SG-LSTM: Social group LSTM for robot navigation through dense crowds</div>
+            <div class="pub-venue">2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Detroit, MI</div>
+            <div class="pub-authors">R. Bhaskara, M. Chiu &amp; A. Bera</div>
+            <a href="https://doi.org/10.1109/IROS55552.2023.10341954" target="_blank" class="pub-doi">DOI: 10.1109/IROS55552.2023.10341954 ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-card">
+        <div class="contact-row"><span>Email</span><a href="mailto:bhaskarr@purdue.edu">bhaskarr@purdue.edu</a></div>
+        <div class="contact-row"><span>Phone</span><span>(+1) 765-240-6305</span></div>
+        <div class="contact-row"><span>Location</span><span>Purdue University, West Lafayette, IN 47906</span></div>
+        <div class="contact-row"><span>Lab</span><a href="https://admirelab.org" target="_blank">AdMIRe Lab — Dr. Oluwaseyi Oderinde</a></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Rashmi Bhaskara · Purdue University</p>
+  </footer>
+
+  <script src="animations.js"></script>
+</body>
+</html>
