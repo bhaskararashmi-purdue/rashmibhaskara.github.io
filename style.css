@@ -31,6 +31,7 @@ body {
   line-height: 1.7;
   color: var(--text);
   background: var(--bg);
+  text-align: justify;
 }
 
 a { color: var(--blue); text-decoration: none; }
