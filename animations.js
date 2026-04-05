@@ -127,7 +127,7 @@ function setupCanvas(id, logicalH) {
 
   const half = W / 2;
   const components   = ['Immune', 'Hypoxia', 'Fibroblasts'];
-  const tracers      = ['FAPI', 'FMISO', 'Biopsy'];
+  const tracers      = ['FARAG', 'FMISO', 'FAPI'];
   const tracerColors = ['#854F0B', '#3B6D11', '#533AB7'];
   const compColors   = ['#378ADD', '#854F0B', '#0F6E56'];
   const compFills    = ['#E6F1FB', '#FAEEDA', '#E1F5EE'];
